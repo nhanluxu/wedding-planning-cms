@@ -16,13 +16,18 @@ const siderStyle = {
 const items = [
   {
     key: "1",
-    icon: <UserOutlined />,
+    icon: <i className="fa-solid fa-chart-line"></i>,
     label: <Link to="/">Dashboard</Link>,
   },
   {
     key: "2",
     icon: <UserOutlined />,
     label: <Link to="/leader">Leaderboard</Link>,
+  },
+  {
+    key: "3",
+    icon: <i className="fa-solid fa-bag-shopping"></i>,
+    label: <Link to="/products">Products</Link>,
   },
 ];
 
