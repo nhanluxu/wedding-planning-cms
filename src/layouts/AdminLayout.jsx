@@ -1,75 +1,68 @@
-import { UserOutlined } from "@ant-design/icons";
-import { Layout, Menu } from "antd";
-import { Link, Outlet } from "react-router-dom";
-const { Header, Content, Sider } = Layout;
-const siderStyle = {
-  overflow: "auto",
-  height: "100vh",
-  position: "sticky",
-  insetInlineStart: 0,
-  top: 0,
-  bottom: 0,
-  scrollbarWidth: "thin",
-  scrollbarGutter: "stable",
-};
+import { NavLink, Outlet } from "react-router-dom";
 
-const items = [
+const MENUS = [
   {
-    key: "1",
-    icon: <i className="fa-solid fa-chart-line"></i>,
-    label: <Link to="/">Dashboard</Link>,
+    path: "",
+    title: "Dashboard",
+    icon: "/icons/dashboard.svg",
+    iconInactive: "/icons/dashboard-inactive.svg",
   },
   {
-    key: "2",
-    icon: <UserOutlined />,
-    label: <Link to="/leader">Leaderboard</Link>,
+    path: "/leaderboard",
+    title: "Leaderboard",
+    icon: "/icons/leaderboard.svg",
+    iconInactive: "/icons/leaderboard-inactive.svg",
   },
   {
-    key: "3",
-    icon: <i className="fa-solid fa-bag-shopping"></i>,
-    label: <Link to="/products">Products</Link>,
+    path: "/order",
+    title: "Order",
+    icon: "/icons/cart.svg",
+    iconInactive: "/icons/cart-inactive.svg",
+  },
+  {
+    path: "/products",
+    title: "Products",
+    icon: "/icons/product.svg",
+    iconInactive: "/icons/product-inactive.svg",
   },
 ];
 
 const AdminLayout = () => {
   return (
-    <Layout hasSider>
-      <Sider style={siderStyle} width={256} theme="light">
-        <Link to="/" className="flex justify-center my-4">
+    <div className="flex h-screen bg-[#f5f5f5]">
+      <aside className="w-[345px] bg-white">
+        <div className="flex items-center justify-center mt-5 mb-8 gap-x-3">
           <img src="/logo.svg" alt="Logo" />
-        </Link>
 
-        <Menu
-          theme="light"
-          mode="inline"
-          defaultSelectedKeys={["1"]}
-          items={items}
-        />
-      </Sider>
+          <p className="font-semibold text-[30px] text-[#151D48]">admin name</p>
+        </div>
 
-      <Layout className="h-screen overflow-y-hidden flex flex-col">
-        <Header className="!bg-white flex items-center justify-end !leading-relaxed">
-          <div className="flex gap-x-2">
-            <div>
-              <img
-                src="https://picsum.photos/200/200"
-                alt="Avatar"
-                className="w-10 h-10 rounded-full"
-              />
-            </div>
+        <ul className="flex flex-col gap-y-4">
+          {MENUS.map((it, idx) => (
+            <li key={idx}>
+              <NavLink
+                to={it.path}
+                className="menu-item flex gap-x-3 mx-11 rounded-2xl px-6 py-4 text-[#737791]"
+              >
+                <img src={it.icon} alt="Icon" className="icon icon-active" />
+                <img
+                  src={it.iconInactive}
+                  alt="Icon"
+                  className="icon icon-inactive"
+                />
 
-            <div>
-              <p className="font-semibold">Admin</p>
-              <p className="text-gray-500 text-xs">admin@gmail.com</p>
-            </div>
-          </div>
-        </Header>
+                <p className="text-lg title">{it.title}</p>
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      </aside>
 
-        <Content className="overflow-y-auto flex-1 px-4 py-6">
-          <Outlet />
-        </Content>
-      </Layout>
-    </Layout>
+      <main className="flex-1 overflow-hidden">
+        <Outlet />
+      </main>
+    </div>
   );
 };
+
 export default AdminLayout;
