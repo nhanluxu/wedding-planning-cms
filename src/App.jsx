@@ -4,6 +4,7 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import Login from "./pages/Login/Login";
 import LeaderBoard from "./pages/LeaderBoard/LeaderBoard";
 import ProductList from "./pages/ProductList/ProductList";
+import OrderPage from "./pages/Order/Order";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -23,6 +24,10 @@ const App = () => {
         {
           path: "products",
           element: <ProductList />,
+        },
+        {
+          path: "order",
+          element: <OrderPage />,
         },
       ],
     },
