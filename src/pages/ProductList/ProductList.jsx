@@ -1,6 +1,5 @@
-import { Card, Image, Table } from "antd";
 import dayjs from "dayjs";
-import { formatCurrency } from "../../utils/formatPrice";
+import { Link } from "react-router-dom";
 
 const DATA = [
   {
@@ -31,47 +30,114 @@ const DATA = [
     image: "https://picsum.photos/200/200",
     createdAt: dayjs().format("DD/MM/YYYY"),
   },
+  {
+    id: 4,
+    name: "Product D",
+    price: 200000,
+    image: "https://picsum.photos/200/200",
+    createdAt: dayjs().format("DD/MM/YYYY"),
+  },
+  {
+    id: 4,
+    name: "Product D",
+    price: 200000,
+    image: "https://picsum.photos/200/200",
+    createdAt: dayjs().format("DD/MM/YYYY"),
+  },
+  {
+    id: 4,
+    name: "Product D",
+    price: 200000,
+    image: "https://picsum.photos/200/200",
+    createdAt: dayjs().format("DD/MM/YYYY"),
+  },
+  {
+    id: 4,
+    name: "Product D",
+    price: 200000,
+    image: "https://picsum.photos/200/200",
+    createdAt: dayjs().format("DD/MM/YYYY"),
+  },
+  {
+    id: 4,
+    name: "Product D",
+    price: 200000,
+    image: "https://picsum.photos/200/200",
+    createdAt: dayjs().format("DD/MM/YYYY"),
+  },
+  {
+    id: 4,
+    name: "Product D",
+    price: 200000,
+    image: "https://picsum.photos/200/200",
+    createdAt: dayjs().format("DD/MM/YYYY"),
+  },
 ];
 
 const ProductList = () => {
-  const columns = [
-    {
-      title: "ID",
-      key: "id",
-      dataIndex: "id",
-    },
-    {
-      title: "Name",
-      key: "name",
-      dataIndex: "name",
-    },
-    {
-      title: "Image",
-      key: "image",
-      dataIndex: "image",
-      render: (image) => <Image src={image} height={100} width={100} />,
-    },
-    {
-      title: "Price",
-      key: "price",
-      dataIndex: "price",
-      render: (data) => formatCurrency(data),
-    },
-    {
-      title: "Created At",
-      key: "createdAt",
-      render: () => dayjs().format("DD/MM/YYYY"),
-    },
-  ];
-
   return (
-    <>
-      <Card>
-        <p className="font-bold text-2xl">Product</p>
-      </Card>
+    <div className="h-screen overflow-y-hidden flex flex-col">
+      <header className="bg-white px-10 py-8 flex items-center justify-between">
+        <p className="text-[#151D48] text-4xl font-semibold">Product</p>
 
-      <Table columns={columns} dataSource={DATA} className="mt-3" />
-    </>
+        <form
+          action=""
+          className="h-14 bg-[#F9FAFB] w-[500px] rounded-xl flex items-center px-3 gap-x-3"
+        >
+          <img src="/icons/search.svg" alt="Icon" />
+
+          <input
+            type="text"
+            placeholder="Search here..."
+            className="h-full outline-none w-full"
+          />
+        </form>
+      </header>
+
+      <div className="p-4 overflow-y-auto">
+        <div className="flex flex-col gap-y-4">
+          {DATA.map((it) => (
+            <div
+              key={it.id}
+              className="py-2 px-4 bg-white rounded-xl flex gap-x-8 items-center"
+            >
+              <div>
+                <img
+                  src={it.image}
+                  alt={it.name}
+                  className="w-24 h-24 object-cover"
+                />
+              </div>
+
+              <div className="flex-1 bg-[#F4F4F4] grid grid-cols-12 p-4 rounded-lg gap-3">
+                <div className="col-span-6 font-semibold text-xl">
+                  Product name
+                </div>
+                <div className="col-span-6 font-semibold text-xl">Price</div>
+                <div className="col-span-6 font-semibold text-xl">
+                  ID product
+                </div>
+                <div className="col-span-6 font-semibold text-xl">
+                  Create At
+                </div>
+              </div>
+
+              <Link className="shadow-[0px_4px_4px_0px_#00000040] h-12 rounded-[10px] px-4 text-white cursor-pointer flex items-center gap-x-2">
+                <img src="/icons/edit-icon.svg" alt="Edit icon" />
+
+                <p className="text-black">Edit</p>
+              </Link>
+
+              <button className="shadow-[0px_4px_4px_0px_#00000040] h-12 rounded-[10px] px-4 text-white cursor-pointer flex items-center gap-x-2">
+                <img src="/icons/delete-icon.svg" alt="icon" />
+
+                <p className="text-red-500">Delete</p>
+              </button>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 };
 

@@ -5,11 +5,26 @@
 html,
 body {
   font-family: "Poppins", serif;
-
-  opacity: 0.8;
 }
 
 .menu-item.active,
 .menu-item:hover {
   @apply bg-[#5D5FEF] text-white font-semibold;
+}
+
+.menu-item {
+  .icon-active {
+    display: none;
+  }
+
+  &.active,
+  &:hover {
+    .icon-active {
+      display: block;
+    }
+
+    .icon-inactive {
+      display: none;
+    }
+  }
 }
