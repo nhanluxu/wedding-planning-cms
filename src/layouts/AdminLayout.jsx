@@ -27,7 +27,32 @@ const items = [
   {
     key: "3",
     icon: <i className="fa-solid fa-bag-shopping"></i>,
+    label: <Link to="/=">Oder</Link>,
+  },
+  {
+    key: "4",
+    icon: <i className="fa-solid fa-bag-shopping"></i>,
     label: <Link to="/products">Products</Link>,
+  },
+  {
+    key: "5",
+    icon: <i className="fa-solid fa-chart-line"></i>,
+    label: <Link to="/">Sales Report</Link>,
+  },
+  {
+    key: "6",
+    icon: <UserOutlined />,
+    label: <Link to="/">Massages</Link>,
+  },
+  {
+    key: "7",
+    icon: <i className="fa-solid fa-bag-shopping"></i>,
+    label: <Link to="/">Setting</Link>,
+  },
+  {
+    key: "8",
+    icon: <i className="fa-solid fa-bag-shopping"></i>,
+    label: <Link to="/">Sign out</Link>,
   },
 ];
 
