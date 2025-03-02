@@ -1,0 +1,358 @@
+.app-container {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.header-title {
+    margin-right: 5px;
+}
+
+.search-container {
+    margin-left: 0;
+}
+
+.search-input {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+}
+
+.search-container {
+    /* flex-grow: 1; */
+    margin: 0 20px;
+}
+
+.search-input:focus {
+    border-color: transparent;
+}
+.user-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.icon-container {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.icon-label {
+    font-size: 14px;
+    color: #4a4a4a;
+}
+
+.navbar {
+    background-color: #fff;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.navbar {
+    background-color: #f5f5f5;
+    /* Background color */
+    padding: 10px 0;
+    /* Padding for the navbar */
+}
+
+.navbar-menu {
+    display: flex;
+    justify-content: center;
+    /* Center the menu items */
+    gap: 15px;
+    /* Adjust the spacing between items */
+    margin: 0;
+    /* Remove default margin */
+    padding: 0;
+    /* Remove default padding */
+    list-style: none;
+    /* Remove bullet points */
+}
+
+.navbar-item {
+    font-weight: bold;
+    /* Bold font for items */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+}
+
+.navbar-item:hover {
+    color: #1e90ff;
+    /* Change color on hover */
+}
+
+.main-content {
+    padding: 20px;
+}
+.info-section {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
+
+.address,
+.hotline,
+.email {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.hotline a,
+.email a {
+    color: #007bff;
+    /* Bootstrap primary color */
+    text-decoration: none;
+}
+
+.hotline a:hover,
+.email a:hover {
+    text-decoration: underline;
+}
+
+.store-button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.store-button:hover {
+    background-color: #357ab8;
+}
+.contact-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.contact-form {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit-button {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #357ab8;
+}
+
+.contact-map-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.contact-form-container {
+    flex: 1;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.contact-form-container h2 {
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group textarea {
+    resize: none;
+    /* Prevent resizing */
+}
+
+.submit-button {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.submit-button:hover {
+    background-color: #357ab8;
+}
+
+.map-section {
+    flex: 1;
+    background-color: #f5f5f5;
+    /* Optional styling */
+    padding: 20px;
+    border-radius: 8px;
+    /* Optional styling */
+}
+
+.map-section h2 {
+    margin-bottom: 10px;
+}
+.footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #4a90e2;
+    /* Footer background color */
+    color: yellow;
+    /* Text color */
+    padding: 15px 0;
+    position: relative;
+    /* Make sure it stays at the bottom */
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-item {
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+}
+
+.footer-item:hover {
+    text-decoration: underline;
+    /* Add hover effect */
+}
+.footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f5f5f5;
+    padding: 20px;
+    color: #333;
+}
+
+.footer-column {
+    flex: 1;
+    margin: 0 20px;
+}
+
+.footer-column h4 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column li {
+    margin: 5px 0;
+}
+
+.payment-support {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.payment-title {
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.payment-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.payment-logo {
+    width: 80px;
+    height: auto;
+}
+
+.contact-info {
+    text-align: center;
+    /* Center text */
+    margin: 20px 0;
+    /* Add margin for spacing */
+}
+
+.logo {
+    margin-bottom: 15px;
+    /* Space between logo and text */
+}
+
+.logo-image {
+    width: 100px;
+    /* Set the width of the logo */
+    height: auto;
+    /* Maintain aspect ratio */
+}
+
+.address,
+.hotline,
+.email {
+    font-size: 16px;
+    /* Set font size for contact details */
+    color: #333;
+    /* Color for text */
+    margin: 5px 0;
+    /* Add margin for spacing */
+}

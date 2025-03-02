@@ -1,0 +1,105 @@
+.dashboard-container {
+    background: #f4f7fa;
+    /* Màu nền nhẹ */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.dashboard-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    /* Màu chữ tiêu đề */
+    margin: 0;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    /* Để ẩn phần viền tràn */
+    transition: border-color 0.3s;
+}
+
+.search-container:hover {
+    border-color: #4caf50;
+    /* Đổi màu viền khi hover */
+}
+
+.search-input {
+    padding: 10px;
+    border: none;
+    outline: none;
+    width: 250px;
+    /* Chiều rộng ô tìm kiếm */
+    font-size: 16px;
+}
+
+.search-icon {
+    background: #4caf50;
+    /* Màu nền cho biểu tượng */
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.search-icon:hover {
+    background: #388e3c;
+    /* Màu nền khi hover */
+}
+.revenue-chart-container {
+    background: #ffffff;
+    /* Màu nền trắng */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    /* Khoảng cách phía trên */
+}
+
+.chart-title {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    /* Màu chữ tiêu đề */
+    margin-bottom: 10px;
+    /* Khoảng cách dưới tiêu đề */
+}
+
+.chart-legend {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.chart-legend-item {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.legend-color-box {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+    border-radius: 3px;
+}
+
+.online-sales {
+    background-color: rgba(76, 175, 80, 1);
+}
+
+.offline-sales {
+    background-color: rgba(33, 150, 243, 1);
+}
