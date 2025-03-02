@@ -1,0 +1,266 @@
+import React from 'react';
+import './Setting.css';
+
+const Setting = () => {
+  return (
+    <div className="app-container">
+      <header className="header">
+        <h1 className="header-title">Massenges</h1>
+        <div className="search-container">
+          <input type="text" className="search-input" placeholder="Search here..." />
+        </div>
+        <div className="user-icons">
+          <div className="icon-container">
+            <span className="icon">⚙️</span>
+            <span className="icon-label">Hệ thống</span>
+          </div>
+          <div className="icon-container">
+            <span className="icon">👤</span>
+            <span className="icon-label">Tài Khoản</span>
+          </div>
+        </div>
+      </header>
+      
+      <nav className="navbar">
+        <ul className="navbar-menu">
+          <li className="navbar-item">Trang chủ</li>
+          <li className="navbar-item">Về chúng tôi</li>
+          <li className="navbar-item">Sản phẩm</li>
+          <li className="navbar-item">Câu hỏi thường gặp</li>
+          <li className="navbar-item">Tin tức</li>
+          <li className="navbar-item">Liên hệ</li>
+        </ul>
+      </nav>
+
+      <div className="settings-container">
+        <h2 className="settings-title">Settings</h2>
+        <p className="settings-description">Tìm cài đặt bạn cần</p>
+        <div className="card-container">
+          <div className="card">
+            <div className="icon">👤</div>
+            <h3>Người Dùng</h3>
+            <p>Admin, thay đổi thông tin.</p>
+          </div>
+          <div className="card">
+            <div className="icon">📋</div>
+            <h3>Danh Sách Sản Phẩm</h3>
+            <p>Cập nhật sản phẩm, danh mục sản phẩm, bộ lọc sắp xếp.</p>
+          </div>
+          <div className="card">
+            <div className="icon">❓</div>
+            <h3>Trung Tâm Trợ Giúp</h3>
+            <p>Admin, thay đổi thông tin.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Privacy Settings Section */}
+      <div className="privacy-settings-container">
+        <div className="item">
+          <div className="accept-label">
+            <input type="checkbox" className="accept-checkbox" />
+            <span className="accept-text">Accepts</span>
+          </div>
+          <p className="description">
+            Allows use of private domain name for wedding website.
+          </p>
+        </div>
+
+        <div className="privacy-center">
+          <div className="icon">🔒</div>
+          <h3>Privacy Center</h3>
+          <p>Make privacy choices that are right for you. Learn how to manage and control your privacy across products.</p>
+        </div>
+
+        <div className="item">
+          <div className="accept-label">
+            <input type="checkbox" className="accept-checkbox" />
+            <span className="accept-text">Accepts</span>
+          </div>
+          <p className="description">
+            Notifications
+          </p>
+          <p className="notification-description">
+            Send notifications to guests about the latest updates.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Setting;'
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.app-container {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-title {
+    font-size: 24px;
+    color: #333;
+}
+
+.search-container {
+    flex: 1;
+    margin: 0 20px;
+}
+
+.search-input {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.user-icons {
+    display: flex;
+    align-items: center;
+}
+
+.icon-container {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+
+.icon {
+    font-size: 20px;
+}
+
+.icon-label {
+    margin-left: 5px;
+    font-size: 16px;
+}
+
+.navbar {
+    background-color: #007bff;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    margin: 0;
+}
+
+.navbar-item {
+    color: white;
+    margin: 0 20px;
+    cursor: pointer;
+}
+
+.settings-container {
+    padding: 20px;
+    text-align: center;
+}
+
+.settings-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.settings-description {
+    margin-bottom: 20px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    width: 30%;
+    /* Adjust width as needed */
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    margin: 10px 0;
+}
+
+.icon {
+    font-size: 40px;
+    /* Adjust icon size */
+    margin-bottom: 10px;
+}
+
+/* Privacy Settings Styles */
+.privacy-settings-container {
+    background-color: white;
+    padding: 0;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    margin: 0;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-top: 1px solid #ccc;
+}
+
+.accept-label {
+    display: flex;
+    align-items: center;
+}
+
+.accept-checkbox {
+    margin-right: 10px;
+}
+
+.description {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.privacy-center {
+    background-color: #e9ecef;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.privacy-center .icon {
+    font-size: 40px;
+}
+
+.privacy-center h3 {
+    margin: 10px 0;
+}
+
+.notification-description {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+}
