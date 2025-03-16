@@ -5,12 +5,17 @@ import Login from "./pages/Login/Login";
 import LeaderBoard from "./pages/LeaderBoard/LeaderBoard";
 import ProductList from "./pages/ProductList/ProductList";
 import OrderPage from "./pages/Order/Order";
+import PrivateRouter from "./components/PrivateRouter/PrivateRouter";
 
 const App = () => {
   const router = createBrowserRouter([
     {
       path: "",
-      element: <AdminLayout />,
+      element: (
+        <PrivateRouter>
+          <AdminLayout />
+        </PrivateRouter>
+      ),
       children: [
         {
           path: "",
