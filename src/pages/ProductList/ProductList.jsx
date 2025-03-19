@@ -1,80 +1,15 @@
+import { useQuery } from "@tanstack/react-query";
 import dayjs from "dayjs";
 import { Link } from "react-router-dom";
-
-const DATA = [
-  {
-    id: 1,
-    name: "Product A",
-    price: 200000,
-    image: "https://picsum.photos/200/200",
-    createdAt: dayjs().format("DD/MM/YYYY"),
-  },
-  {
-    id: 2,
-    name: "Product B",
-    price: 200000,
-    image: "https://picsum.photos/200/200",
-    createdAt: dayjs().format("DD/MM/YYYY"),
-  },
-  {
-    id: 3,
-    name: "Product C",
-    price: 200000,
-    image: "https://picsum.photos/200/200",
-    createdAt: dayjs().format("DD/MM/YYYY"),
-  },
-  {
-    id: 4,
-    name: "Product D",
-    price: 200000,
-    image: "https://picsum.photos/200/200",
-    createdAt: dayjs().format("DD/MM/YYYY"),
-  },
-  {
-    id: 4,
-    name: "Product D",
-    price: 200000,
-    image: "https://picsum.photos/200/200",
-    createdAt: dayjs().format("DD/MM/YYYY"),
-  },
-  {
-    id: 4,
-    name: "Product D",
-    price: 200000,
-    image: "https://picsum.photos/200/200",
-    createdAt: dayjs().format("DD/MM/YYYY"),
-  },
-  {
-    id: 4,
-    name: "Product D",
-    price: 200000,
-    image: "https://picsum.photos/200/200",
-    createdAt: dayjs().format("DD/MM/YYYY"),
-  },
-  {
-    id: 4,
-    name: "Product D",
-    price: 200000,
-    image: "https://picsum.photos/200/200",
-    createdAt: dayjs().format("DD/MM/YYYY"),
-  },
-  {
-    id: 4,
-    name: "Product D",
-    price: 200000,
-    image: "https://picsum.photos/200/200",
-    createdAt: dayjs().format("DD/MM/YYYY"),
-  },
-  {
-    id: 4,
-    name: "Product D",
-    price: 200000,
-    image: "https://picsum.photos/200/200",
-    createdAt: dayjs().format("DD/MM/YYYY"),
-  },
-];
+import { api } from "../../api/api";
+import { formatCurrency } from "../../utils/formatPrice";
 
 const ProductList = () => {
+  const { data } = useQuery({
+    queryKey: ["GET_PRODUCTS"],
+    queryFn: () => api.get("/lobby/all"),
+  });
+
   return (
     <div className="h-screen overflow-y-hidden flex flex-col">
       <header className="bg-white px-10 py-8 flex items-center justify-between">
@@ -96,14 +31,14 @@ const ProductList = () => {
 
       <div className="p-4 overflow-y-auto">
         <div className="flex flex-col gap-y-4">
-          {DATA.map((it) => (
+          {data?.data.map((it) => (
             <div
-              key={it.id}
+              key={it._id}
               className="py-2 px-4 bg-white rounded-xl flex gap-x-8 items-center"
             >
               <div>
                 <img
-                  src={it.image}
+                  src={it.imageUrl}
                   alt={it.name}
                   className="w-24 h-24 object-cover"
                 />
@@ -111,14 +46,14 @@ const ProductList = () => {
 
               <div className="flex-1 bg-[#F4F4F4] grid grid-cols-12 p-4 rounded-lg gap-3">
                 <div className="col-span-6 font-semibold text-xl">
-                  Product name
-                </div>
-                <div className="col-span-6 font-semibold text-xl">Price</div>
-                <div className="col-span-6 font-semibold text-xl">
-                  ID product
+                  {it.name}
                 </div>
                 <div className="col-span-6 font-semibold text-xl">
-                  Create At
+                  {formatCurrency(it.price)}
+                </div>
+                <div className="col-span-6 font-semibold text-xl">{it._id}</div>
+                <div className="col-span-6 font-semibold text-xl">
+                  {dayjs(it.createdAt).format("DD/MM/YYYY")}
                 </div>
               </div>
 
